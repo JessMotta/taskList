@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import type { Task } from "./types";
 import './App.css'
 import axios from "axios";
+import * as api from "./api";
 import { v4 as uuidv4 } from 'uuid'
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
 
   // get data from API
   useEffect(() => {
-    axios.get("http://localhost:3001/tasks").then(response => {
+    api.getTasks().then(response => {
       setTasks(response.data)
     })
   }, [])
@@ -30,7 +31,7 @@ function App() {
       }
 
       try {
-        const response = await axios.post("http://localhost:3001/tasks", newTask);
+        const response = await api.addTask(newTask);
         setTasks([...tasks, response.data]);
         setNewTaskText('');
       } catch (error) {
@@ -55,7 +56,7 @@ function App() {
     const taskToUpdate = updatedTasks.find(task => task.id === id)
     if (taskToUpdate) {
       try {
-        await axios.put(`http://localhost:3001/tasks/${id}`, taskToUpdate)
+        await api.updateTask(id, taskToUpdate)
       } catch (error) {
         console.log('Error updating item', error)
       }
@@ -67,7 +68,7 @@ function App() {
   // remove task
   const handleRemoveTask = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:3001/tasks/${id}`)
+      await api.deleteTask(id)
       const updatedTasks = tasks.filter(task => task.id !== id)
       setTasks(updatedTasks)
 
