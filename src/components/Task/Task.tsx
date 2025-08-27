@@ -1,8 +1,6 @@
-const Task = ({children}: {children: React.ReactNode}) => {
+const Task = () => {
     return(
-        <>
-        <p>{children}</p>
-        </>
+        <></>
     )
 }
 export default Task;

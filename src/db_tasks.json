@@ -1,0 +1,9 @@
+[{
+    "id": 1,
+    "text": "Corigir exercício",
+    "isCompleted": false
+}, {
+    "id": 2,
+    "text": "Fazer projeto React",
+    "isCompleted": true
+}]

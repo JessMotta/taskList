@@ -1,8 +1,6 @@
-
-const TaskList = ({children}: {children: React.ReactNode}) =>{
+const TaskList = () =>{
     return(
         <>
-       {children}
        </>
     )
 }

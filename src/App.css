@@ -1,0 +1,17 @@
+.task-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.task-list li {
+  list-style-type: none;
+}
+
+.task-list li.completed span {
+  text-decoration: line-through;
+}
+
+.task-list li span input {
+  margin-right: 10px;
+}
