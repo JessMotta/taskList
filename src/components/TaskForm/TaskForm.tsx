@@ -5,7 +5,7 @@ interface FormProps {
     onAddTask: (text: string) => void;
 }
 
-const Form = ({ onAddTask }: FormProps) => {
+const TaskForm = ({ onAddTask }: FormProps) => {
     const [newTaskText, setNewTaskText] = useState("");
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -25,4 +25,4 @@ const Form = ({ onAddTask }: FormProps) => {
     )
 }
 
-export default Form;
+export default TaskForm;
