@@ -15,3 +15,7 @@
 .task-list li span input {
   margin-right: 10px;
 }
+
+.task-list button {
+  margin-left: 64px;
+}

@@ -1,9 +1,9 @@
-[{
-    "id": 1,
-    "text": "Corigir exercício",
-    "isCompleted": false
-}, {
-    "id": 2,
-    "text": "Fazer projeto React",
-    "isCompleted": true
-}]
+{
+  "tasks": [
+    {
+      "id": "609e57d7-3092-496e-906a-914b91d0d134",
+      "text": "criando um texto",
+      "isCompleted": false
+    }
+  ]
+}
