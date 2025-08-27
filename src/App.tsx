@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import type { Task } from "./types";
 import './App.css'
-import axios from "axios";
-import * as api from "./api";
+import * as api from "./services/api";
 import { v4 as uuidv4 } from 'uuid'
+import TaskList from "./components/TaskList/TaskList";
+import Form from "./components/Form/Form";
+import TaskFilter from "./components/TaskFilter/TaskFilter";
+
 
 function App() {
 
   const [tasks, setTasks] = useState<Task[]>([])
-  const [newTaskText, setNewTaskText] = useState("");
   const [filter, setFilter] = useState<'all' | 'pending' | 'completed'>('all');
 
   // get data from API
@@ -19,10 +21,10 @@ function App() {
   }, [])
 
   // add new task
-  const handleAddTask = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleAddTask = async (newTaskText: string) => {
 
     // check if input isn't empty
+
     if (newTaskText !== '') {
       const newTask: Task = {
         id: uuidv4(),
@@ -30,14 +32,13 @@ function App() {
         isCompleted: false
       }
 
+
       try {
         const response = await api.addTask(newTask);
         setTasks([...tasks, response.data]);
-        setNewTaskText('');
       } catch (error) {
         console.log('Error adding item', error)
       }
-
     }
     else {
       window.alert("Precisa digitar a tarefa")
@@ -90,26 +91,13 @@ function App() {
   return (
     <>
       <h1>Lista de Tarefas</h1>
-      <form onSubmit={handleAddTask}>
-        <input type="text" placeholder="Adicionar nova tarefa" value={newTaskText} onChange={(e) => setNewTaskText(e.target.value)} />
-        <button type="submit">Adicionar</button>
-      </form>
-      <div>
-        <button onClick={() => setFilter('all')}>Todas</button>
-        <button onClick={() => setFilter('pending')}>Pendentes</button>
-        <button onClick={() => setFilter('completed')}>Concluídas</button>
-      </div>
-      <ul className="task-list">
-        {filteredTasks.map(task => (
-          <li key={task.id} className={task.isCompleted ? 'completed' : ''}>
-            <span onClick={() => handleToggleComplete(task.id)}>
-              <input type="checkbox" checked={task.isCompleted} onChange={() => handleToggleComplete(task.id)} />
-              {task.text}
-            </span>
-            <button onClick={() => handleRemoveTask(task.id)}>Del</button>
-          </li>
-        ))}
-      </ul>
+      <Form onAddTask={handleAddTask} />
+      <TaskFilter onChangeFilter={setFilter} />
+      <TaskList
+        tasks={filteredTasks}
+        onToggleComplete={handleToggleComplete}
+        onRemoveTask={handleRemoveTask}
+      />
     </>
   )
 }

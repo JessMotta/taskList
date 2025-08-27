@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { Task } from "./types";
+import type { Task } from "../types";
 
 const api = axios.create({
     baseURL: 'http://localhost:3001'
