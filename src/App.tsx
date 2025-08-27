@@ -8,7 +8,9 @@ function App() {
 
   const [tasks, setTasks] = useState<Task[]>([])
   const [newTaskText, setNewTaskText] = useState("");
+  const [filter, setFilter] = useState<'all' | 'pending' | 'completed'>('all');
 
+  // get data from API
   useEffect(() => {
     axios.get("http://localhost:3001/tasks").then(response => {
       setTasks(response.data)
@@ -27,17 +29,22 @@ function App() {
         isCompleted: false
       }
 
-      const response = await axios.post("http://localhost:3001/tasks", newTask);
-      setTasks([...tasks, response.data]);
-      setNewTaskText("");
+      try {
+        const response = await axios.post("http://localhost:3001/tasks", newTask);
+        setTasks([...tasks, response.data]);
+        setNewTaskText('');
+      } catch (error) {
+        console.log('Error adding item', error)
+      }
+
     }
     else {
-      window.alert("Precisa digitar o nome da tarefa")
+      window.alert("Precisa digitar a tarefa")
     }
   }
 
   // toggle task
-  const handleToggleComplete = (id: string) => {
+  const handleToggleComplete = async (id: string) => {
     const updatedTasks = tasks.map(task => {
       if (task.id === id) {
         return { ...task, isCompleted: !task.isCompleted }
@@ -47,7 +54,11 @@ function App() {
 
     const taskToUpdate = updatedTasks.find(task => task.id === id)
     if (taskToUpdate) {
-      axios.put(`http://localhost:3001/tasks/${id}`, taskToUpdate).catch(error => console.log('Error updating item', error))
+      try {
+        await axios.put(`http://localhost:3001/tasks/${id}`, taskToUpdate)
+      } catch (error) {
+        console.log('Error updating item', error)
+      }
     }
     setTasks(updatedTasks)
   }
@@ -65,6 +76,16 @@ function App() {
     }
   }
 
+  // filtered tasks
+  const filteredTasks = tasks.filter(task => {
+    if (filter === 'pending') {
+      return !task.isCompleted
+    } else if (filter === 'completed') {
+      return task.isCompleted
+    }
+    return true
+  })
+
   return (
     <>
       <h1>Lista de Tarefas</h1>
@@ -72,8 +93,13 @@ function App() {
         <input type="text" placeholder="Adicionar nova tarefa" value={newTaskText} onChange={(e) => setNewTaskText(e.target.value)} />
         <button type="submit">Adicionar</button>
       </form>
+      <div>
+        <button onClick={() => setFilter('all')}>Todas</button>
+        <button onClick={() => setFilter('pending')}>Pendentes</button>
+        <button onClick={() => setFilter('completed')}>Concluídas</button>
+      </div>
       <ul className="task-list">
-        {tasks.map(task => (
+        {filteredTasks.map(task => (
           <li key={task.id} className={task.isCompleted ? 'completed' : ''}>
             <span onClick={() => handleToggleComplete(task.id)}>
               <input type="checkbox" checked={task.isCompleted} onChange={() => handleToggleComplete(task.id)} />
