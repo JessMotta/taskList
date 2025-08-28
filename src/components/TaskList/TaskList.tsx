@@ -1,4 +1,5 @@
 import type { Task } from "../../types";
+import './TaskList.css'
 import TaskItem from "../TaskItem/TaskItem";
 
 interface TaskListProps {
@@ -10,7 +11,7 @@ interface TaskListProps {
 const TaskList = ({ tasks, onToggleComplete, onRemoveTask }: TaskListProps) => {
     return (
         <>
-            <ul className="task-list">
+            <ul className="taskList">
                 {tasks.map(task => (
                     <TaskItem key={task.id}
                         task={task}
