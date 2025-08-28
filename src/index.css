@@ -16,9 +16,11 @@
 
 body {
   margin: 0;
+  padding: 0;
   display: flex;
-  place-items: center;
+  flex-direction: column;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #333131ff;
 }
 

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import type { Task } from "../../types";
 import * as api from '../../services/api';
 import { v4 as uuidv4 } from 'uuid'
+import './Main.css'
 import TaskForm from "../TaskForm/TaskForm";
 import TaskFilter from "../TaskFilter/TaskFilter";
 import TaskList from "../TaskList/TaskList";
@@ -86,7 +87,7 @@ const Main = () => {
   })
 
   return (
-    <main>
+    <main className="main-container">
       <TaskForm onAddTask={handleAddTask} />
       <TaskFilter onChangeFilter={setFilter} />
       <TaskList

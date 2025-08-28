@@ -1,4 +1,5 @@
 import type { Task } from "../../types"
+import { FaRegTrashCan } from "react-icons/fa6";
 
 interface TaskItemProps {
     task: Task;
@@ -14,7 +15,7 @@ const TaskItem = ({ task, onToggleComplete, onRemoveTask }: TaskItemProps) => {
                     <input type="checkbox" checked={task.isCompleted} onChange={() => onToggleComplete(task.id)} />
                     {task.text}
                 </span>
-                <button onClick={() => onRemoveTask(task.id)}>Del</button>
+                <button onClick={() => onRemoveTask(task.id)}><FaRegTrashCan /></button>
             </li>
         </>
     )

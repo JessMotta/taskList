@@ -1,0 +1,17 @@
+.taskFilter-container {
+    margin-top: 48px;
+}
+
+.taskFilter-container button{
+    margin: 20px 40px;
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(103, 2, 197);
+    cursor: pointer;
+}
+
+.taskFilter-container button:hover {
+    background-color: #9634f1;
+}
