@@ -25,18 +25,17 @@
 }
 
 .taskItem-input {
-    appearance: none;
+    accent-color: #9634f1;
+}
+
+.taskItem-input {
     margin: 0 1rem 0 0;
     width: 1rem;
     height: 1rem;
     border: 1px solid #686767;
     border-radius: 4px;
     cursor: pointer;
-}
-
-.taskItem-input:checked {
-    background-color: #9634f1;
-    border-color: #9634f1;
+    display: inline-block;
 }
 
 

@@ -8,10 +8,18 @@
     height: 40px;
     border: none;
     border-radius: 8px;
-    background-color: rgb(103, 2, 197);
+    background-color: #6702c5;
     cursor: pointer;
 }
 
 .taskFilter-container button:hover {
+    background-color: #9634f1;
+}
+
+.taskFilter-container button.active {
+    background-color: #8b0985;
+}
+
+.taskFilter-container button.active:hover {
     background-color: #9634f1;
 }

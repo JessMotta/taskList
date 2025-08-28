@@ -86,10 +86,11 @@ const Main = () => {
     return true
   })
 
+
   return (
     <main className="main-container">
       <TaskForm onAddTask={handleAddTask} />
-      <TaskFilter onChangeFilter={setFilter} />
+      <TaskFilter currentFilter={filter} onChangeFilter={setFilter} />
       <TaskList
         tasks={filteredTasks}
         onToggleComplete={handleToggleComplete}
