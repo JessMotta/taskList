@@ -4,7 +4,7 @@
 
 
  ## Description :bookmark_tabs:
- Application to manager tasks:
+ Application to manage tasks:
  - add tasks
  - toggle status (pending or completed)
  - delete tasks
