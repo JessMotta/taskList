@@ -8,6 +8,7 @@
     padding: 16px;
     margin-bottom: 16px;
     border-radius: 8px;
+    width: 100%;
 }
 
 .taskItem:hover {
@@ -63,7 +64,7 @@
     visibility: visible;
 }
 
-.taskItem-button {
+.taskItem-button--delete {
     width: 48px;
     height: 32px;
     border: none;
@@ -72,17 +73,12 @@
     cursor: pointer;
 }
 
-.taskItem-button:hover {
+.taskItem-button--delete:hover {
     background-color: #9634f1;
 }
 
 @media only screen and (max-width: 480px) {
     .taskItem {
-        width: auto;
-        margin: 0 16px 16px;
-    }
-
-    .taskItem-checkbox {
-        margin-right: 8px;
+        width: 80vw;
     }
 }

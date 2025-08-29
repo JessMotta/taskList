@@ -1,12 +1,10 @@
 .taskList {
   width: 50vw;
   padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-}
-
-
-@media only screen and (max-width: 480px) {
-  .taskList {
-    width: 100vw;
-  }
 }
