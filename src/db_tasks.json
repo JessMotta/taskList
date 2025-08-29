@@ -1,23 +1,33 @@
 {
   "tasks": [
     {
-      "id": "2adeb87e-76a0-4cec-9043-2dd7d98946d8",
-      "text": "Kakashi",
-      "isCompleted": true
-    },
-    {
-      "id": "40f19d50-1139-40bf-8f04-c60dac158ddf",
-      "text": "thishi",
+      "id": "c03665de-8922-4fb3-aebf-e72d172fa3b3",
+      "text": "Study React.js",
       "isCompleted": false
     },
     {
-      "id": "ed709b3a-3b40-4953-8ba5-5989260be7f4",
-      "text": "escolhendo uma tarefa grande",
+      "id": "00306156-65e7-4a6a-a4cf-ca1c15c7ac8e",
+      "text": "Create project in Figma",
       "isCompleted": true
     },
     {
-      "id": "134c468d-4bdc-46dc-86da-c1bf223a5ecb",
-      "text": "escolhendo uma nova tarefa",
+      "id": "14091499-dd4e-473b-bfc5-b77c97092adc",
+      "text": "Read book about React Native",
+      "isCompleted": false
+    },
+    {
+      "id": "5d9a1ba1-61a8-43d3-808c-57627ae0a41d",
+      "text": "Do laundry",
+      "isCompleted": true
+    },
+    {
+      "id": "effb6258-6242-4df0-9525-8fb6e12f4be1",
+      "text": "Call mom",
+      "isCompleted": false
+    },
+    {
+      "id": "b52f90a2-dcfb-4777-863f-59cd5870c435",
+      "text": "Buy a new plant",
       "isCompleted": false
     }
   ]
