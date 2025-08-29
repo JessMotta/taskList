@@ -8,7 +8,6 @@ interface TaskFilterProps {
 }
 
 const TaskFilter = ({ onChangeFilter, currentFilter }: TaskFilterProps) => {
-    console.log('currentFilter', currentFilter)
     return (
         <div className="taskFilter">
             <button className={` taskFilter-button ${currentFilter === 'all' ? 'active' : ''}`} onClick={() => onChangeFilter('all')}>All</button>
