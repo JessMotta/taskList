@@ -13,8 +13,12 @@ const TaskItem = ({ task, onToggleComplete, onRemoveTask }: TaskItemProps) => {
     return (
         <>
             <li key={task.id} className={`taskItem ${task.isCompleted ? 'completed' : ''}`}>
-                <span className="taskItem-checkbox">
-                    <input id={task.id} className="taskItem-input" type="checkbox" checked={task.isCompleted} onChange={() => onToggleComplete(task.id)} />
+                <span className="taskItem-checkbox" onClick={() => onToggleComplete(task.id)}>
+                    <input id={task.id} className="taskItem-input" type="checkbox" checked={task.isCompleted} />
+                    <label htmlFor={task.id}>
+                        <svg className="taskItem-checkmark--icon" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" /></svg>
+                    </label>
                     {task.text}
                 </span>
                 <button className="taskItem-button" onClick={() => onRemoveTask(task.id)}><FaRegTrashCan size={16} /></button>

@@ -1,11 +1,6 @@
 {
   "tasks": [
     {
-      "id": "c0b1046a-ff7a-4c47-acf8-8d42a34dcfef",
-      "text": "1584",
-      "isCompleted": true
-    },
-    {
       "id": "2adeb87e-76a0-4cec-9043-2dd7d98946d8",
       "text": "Kakashi",
       "isCompleted": true
@@ -13,7 +8,17 @@
     {
       "id": "40f19d50-1139-40bf-8f04-c60dac158ddf",
       "text": "thishi",
+      "isCompleted": false
+    },
+    {
+      "id": "ed709b3a-3b40-4953-8ba5-5989260be7f4",
+      "text": "escolhendo uma tarefa grande",
       "isCompleted": true
+    },
+    {
+      "id": "134c468d-4bdc-46dc-86da-c1bf223a5ecb",
+      "text": "escolhendo uma nova tarefa",
+      "isCompleted": false
     }
   ]
 }

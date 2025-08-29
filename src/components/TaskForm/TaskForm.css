@@ -1,0 +1,48 @@
+.taskForm {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50vw;
+}
+
+.taskForm-input {
+    padding: 0.5rem;
+    width: 50%;
+    font-size: 1rem;
+}
+
+.taskForm-button {
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background-color: #810662;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.taskForm-button:hover {
+    background-color: #c50294;
+}
+
+@media only screen and (max-width: 480px) {
+    .taskForm {
+        width: max-content;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width:320px) {
+    .taskForm {
+        width: 100vw;
+        justify-content: center;
+    }
+
+    .taskForm-button {
+        width: fit-content;
+        height: 38px;
+        padding: 0.5rem 1rem;
+        border-radius: 0 8px 8px 0;
+    }
+}

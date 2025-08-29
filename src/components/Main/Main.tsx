@@ -88,7 +88,7 @@ const Main = () => {
 
 
   return (
-    <main className="main-container">
+    <main className="main">
       <TaskForm onAddTask={handleAddTask} />
       <TaskFilter currentFilter={filter} onChangeFilter={setFilter} />
       <TaskList

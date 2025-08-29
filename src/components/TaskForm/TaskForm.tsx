@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './TaskForm.css'
 
 
 interface FormProps {
@@ -17,9 +18,9 @@ const TaskForm = ({ onAddTask }: FormProps) => {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="Adicionar nova tarefa" value={newTaskText} onChange={(e) => setNewTaskText(e.target.value)} />
-                <button type="submit">Adicionar</button>
+            <form className="taskForm" onSubmit={handleSubmit}>
+                <input id="form-input" className="taskForm-input" type="text" placeholder="Add new task" value={newTaskText} onChange={(e) => setNewTaskText(e.target.value)} />
+                <button className="taskForm-button" type="submit">Add</button>
             </form>
         </>
     )

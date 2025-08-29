@@ -10,10 +10,10 @@ interface TaskFilterProps {
 const TaskFilter = ({ onChangeFilter, currentFilter }: TaskFilterProps) => {
     console.log('currentFilter', currentFilter)
     return (
-        <div className="taskFilter-container">
-            <button className={currentFilter === 'all' ? 'active' : ''} onClick={() => onChangeFilter('all')}>Todas</button>
-            <button className={currentFilter === 'pending' ? 'active' : ''} onClick={() => onChangeFilter('pending')}>Pendentes</button>
-            <button className={currentFilter === 'completed' ? 'active' : ''} onClick={() => onChangeFilter('completed')}>Concluídas</button>
+        <div className="taskFilter">
+            <button className={` taskFilter-button ${currentFilter === 'all' ? 'active' : ''}`} onClick={() => onChangeFilter('all')}>All</button>
+            <button className={` taskFilter-button ${currentFilter === 'pending' ? 'active' : ''}`} onClick={() => onChangeFilter('pending')}>Pending</button>
+            <button className={` taskFilter-button ${currentFilter === 'completed' ? 'active' : ''}`} onClick={() => onChangeFilter('completed')}>Completed</button>
         </div>
     )
 }
