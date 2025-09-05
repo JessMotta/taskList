@@ -4,12 +4,12 @@
 
 
  ## Description :bookmark_tabs:
- Application to manager tasks, like:
+ Application to manage tasks:
  - add tasks
  - toggle status (pending or completed)
  - delete tasks
 
- To help you see your task list more clearly it's possible to filter the tasks by status using buttons: All (show all tasks in your board), Pending (show your undone tasks) and Completed (show the tasks that you've done).
+ To help you see your task list more clearly it's possible to filter the tasks by status using buttons: All (show all tasks in your board), Pending (show tasks that you haven't done) and Completed (show the tasks that you've done).
 
 <img width="1600" height="900" alt="mockup" src="https://github.com/user-attachments/assets/f3109e02-629e-4d1b-8cb2-4ef764040b20" />
 
