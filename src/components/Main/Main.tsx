@@ -39,7 +39,7 @@ const Main = () => {
       }
     }
     else {
-      window.alert("Precisa digitar a tarefa")
+      window.alert("Task can't be empty")
     }
   }
 

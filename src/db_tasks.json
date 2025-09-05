@@ -1,11 +1,6 @@
 {
   "tasks": [
     {
-      "id": "c03665de-8922-4fb3-aebf-e72d172fa3b3",
-      "text": "Study React.js",
-      "isCompleted": false
-    },
-    {
       "id": "00306156-65e7-4a6a-a4cf-ca1c15c7ac8e",
       "text": "Create project in Figma",
       "isCompleted": true
@@ -28,6 +23,11 @@
     {
       "id": "b52f90a2-dcfb-4777-863f-59cd5870c435",
       "text": "Buy a new plant",
+      "isCompleted": false
+    },
+    {
+      "id": "a7ef11a9-09db-4727-a67a-55b9ee38de4c",
+      "text": "teste",
       "isCompleted": false
     }
   ]
